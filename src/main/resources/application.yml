@@ -59,7 +59,7 @@ spring:
 logging:
   level: debug
   file: logs/access.log
-
+#最大地址数量
 address:
   maxAddressCount: 3
 ---
