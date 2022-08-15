@@ -45,7 +45,7 @@ mybatis-plus:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/test?&allowMultiQueries=true&autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -55,7 +55,11 @@ spring:
     data: classpath*:sql/**/*-data.sql
     initialize: false
 
+
 logging:
   level: debug
   file: logs/access.log
+
+address:
+  maxAddressCount: 3
 ---

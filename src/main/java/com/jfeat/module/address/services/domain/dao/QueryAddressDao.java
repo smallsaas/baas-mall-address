@@ -33,4 +33,6 @@ public interface QueryAddressDao extends QueryMasterDao<Address> {
      * Query entity model list for slave items
      */
     List<AddressModel> queryMasterModelList(@Param("masterId") Object masterId);
+
+    int updateAddressList(@Param("addressList") List<Address> addressList);
 }

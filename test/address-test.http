@@ -1,0 +1,60 @@
+@endpoint=http://localhost:8080
+@service=http://house.cloud.smallsaas.cn
+
+@adminToken =Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEiLCJ1c2VySWQiOiIxIiwidGVuYW50T3JnSWQiOjEsImFjY291bnQiOiJhZG1pbiIsInVzZXJUeXBlIjowLCJkZXZVc2VyVHlwZSI6MCwiYlVzZXJUeXBlIjoiU1lTVEVNIiwiYlVzZXJJZCI6MCwiaWF0IjoxNjU5MTUwMjg0LCJqdGkiOiIxIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2NjE3NDIyODR9.b3zyI-RqjsOO1R6RxxG3x9ie3Lv4AYJRiLGtP6MGHqPnevcTX1elh7ixRfS1mf6lX7XilGtUawjmgbYQG72xvQ
+
+### 查询列表
+GET {{endpoint}}/api/crud/address/address/addresses
+Authorization:{{adminToken}}
+
+
+
+###查询用户默认地址
+GET {{endpoint}}/api/crud/address/AddressWithStatusEndpoint/getDefaultAddress
+Authorization:{{adminToken}}
+
+{
+    "userId":298
+}
+
+### 添加地址
+POST {{endpoint}}/api/crud/address/AddressWithStatusEndpoint
+Authorization:{{adminToken}}
+{
+    "address": "神州路软件园B栋403",
+    "areaCode": null,
+    "areaName": "黄埔区",
+    "cityCode": null,
+    "cityName": "广州市",
+    "defaultStatus": 1,
+    "name": "张三",
+    "note": null,
+    "phone": "13123456789",
+    "provinceCode": null,
+    "provinceName": "广东省",
+    "tel": null,
+    "userId": "298",
+    "zip": "510000"
+}
+
+### 修改地址
+PUT {{endpoint}}/api/crud/address/AddressWithStatusEndpoint/1
+{
+    "address": "神州路软件园B栋403",
+    "areaCode": null,
+    "areaName": "黄埔区",
+    "cityCode": null,
+    "cityName": "广州市",
+    "defaultStatus": 1,
+    "name": "王五",
+    "note": null,
+    "phone": "13123456789",
+    "provinceCode": null,
+    "provinceName": "广东省",
+    "tel": null,
+    "userId": "298",
+    "zip": "510000"
+}
+
+### 删除地址
+DELETE {{endpoint}}/api/crud/address/AddressWithStatusEndpoint/1
